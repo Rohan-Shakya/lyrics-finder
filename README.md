@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Lyrics Finder using React Hooks & Context API  
+
+Find songs, artists and lyrics using the [lyrics.ovh](https://api.lyrics.ovh) API
+
+
 ## Available Scripts
 
 In the project directory, you can run:
