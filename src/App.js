@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Home } from './components/Home';
+import { Lyrics } from './components/tracks/Lyrics';
+import { Navbar } from './components/Navbar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { GlobalContext } from './context/GlobalContext';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalContext>
+      <Router>
+        <>
+          <Navbar />
+          <div className='container'>
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <Route
+                path='/lyrics/track/:artist/:songTitle/:id'
+                exact
+                component={Lyrics}
+              />
+            </Switch>
+          </div>
+        </>
+      </Router>
+    </GlobalContext>
   );
 }
 
